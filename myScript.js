@@ -1,42 +1,24 @@
 
-class NodeStruct {
-   constructor(value,left,right){
-     this.value = value;
-     this.left = left;
-     this.right = right;
-   }
+const arr = [
+    {name:'shay',age:28},
+    {name:'shay1',age:28},
+    {name:'shay2',age:28},
+    {name:'miki 6',age:28},
+    {name:'shay4',age:28},
+    {name:'miki 5',age:28},
+    {name:'shay6',age:28},
+    {name:'gigal 5',age:28},
+    {name:'shai 77',age:28},
+    {name:'shaq 7',age:28},
+    {name:'shay9',age:28},
+]
+
+
+
+
+// return "shay" [{},{}]
+const func =(arr)=>{
+
 }
 
-const height = new NodeStruct(-9,null,null)
-const nine = new NodeStruct(9,null,null)
-const ten = new NodeStruct(10,null,null)
-const four = new NodeStruct(4,height,nine)
-const five = new NodeStruct(5,ten,null)
-const two = new NodeStruct(2,four,five)
-
-
-function findmaxPathHelper(root,sum,path) {
-  if(root === null){
-    return {sum,path} 
-  }
-  sum += root.value
-  path += root.value + " => "
-  if(root.right === null && root.left === null){
-      return {sum,path}
-  }
-  const left = findmaxPathHelper(root.left,sum,path)
-  const right = findmaxPathHelper(root.right,sum,path)
-  if(left.sum > right.sum){
-    return findmaxPathHelper(root.left,sum,path)
-  }else{
-    return findmaxPathHelper(root.right,sum,path)
-  }
-}
-
-
-function findmaxPath(root) {
-  const sum = findmaxPathHelper(root,0,'')
-  return sum;
-}
-
-console.log(findmaxPath(two))
+func(arr)
